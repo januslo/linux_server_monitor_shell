@@ -1,0 +1,5 @@
+# /etc/cron.d/monitor: crontab fragment for monitor_agent.sh
+#
+
+# executes every
+*	*	*	*	*	root	/root/monitor/monitor_agent.sh 2>&1 | /usr/bin/logger -t monitor_agent
