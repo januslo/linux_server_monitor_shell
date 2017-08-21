@@ -46,10 +46,11 @@ fi
 echo "[SERVER_DESC]\n"$server_desc"\n">>$file_name;
 
 $working_dir"/system_info.sh" $file_name;
-#echo 1;
 #comment it if no docker in the server.
 $working_dir"/docker_status.sh" $file_name;
-#echo 2;
+
+#commnet it if no mysql in the server.
+$working_dir"/mysql_status.sh" $file_name;
 
 lftp sftp"://"$sftp_user":"$sftp_password"@"$sftp_host -e "cd "$upload_path";put "$file_name";bye;";
 
